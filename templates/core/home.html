@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Slider -->
+<div id="heroCarousel" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="4000">
+  <div class="carousel-inner rounded shadow">
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <img src="{% static 'images/slide1.jpg' %}" class="d-block w-100" alt="Aadhar Services">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <img src="{% static 'images/slide2.jpg' %}" class="d-block w-100" alt="Ration Card">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <img src="{% static 'images/slide3.jpg' %}" class="d-block w-100" alt="Online Services">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+      </div>
+    </div>
+
+        <div class="carousel-item">
+      <img src="{% static 'images/slide4.jpg' %}" class="d-block w-100" alt="Online Services">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+      </div>
+    </div>
+
+        <div class="carousel-item">
+      <img src="{% static 'images/slide5.jpg' %}" class="d-block w-100" alt="Online Services">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Hero Section (Below Slider) -->
+<div class="hero mb-5 px-3">
+  <div class="row align-items-center">
+    <div class="col-md-8">
+      <h1 class="display-6 fw-bold">One-stop citizen service center</h1>
+      <p class="lead">Apply for common services like Aadhaar update, PAN, Ration Card, income/caste certificates and more through our F-CC9</p>
+      <a href="{% url 'services' %}" class="btn btn-primary btn-lg">Browse Services</a>
+    </div>
+    <div class="col-md-4 text-center">
+      <img src="https://cdn.jsdelivr.net/gh/encharm/Font-Awesome-SVG-PNG/black/png/64/cog.png" class="img-fluid" alt="services">
+    </div>
+  </div>
+</div>
+
+<!-- Categories Section -->
+<h3 class="mb-3 text-success">Categories</h3>
+<div class="row g-3 mb-5">
+  {% for cat in categories %}
+  <div class="col-6 col-md-3">
+    <div class="card service-card h-100">
+      <div class="card-body text-center">
+        {% if cat.icon %}
+          <img src="{{ cat.icon.url }}" class="img-fluid mb-2" alt="{{ cat.name }}" style="height:60px; width:auto;">
+        {% else %}
+          <div class="display-6">🧩</div>
+        {% endif %}
+        <h6 class="mt-2">{{ cat.name }}</h6>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <p>No categories yet. Add some in the Admin.</p>
+  {% endfor %}
+</div>
+  {% for s in featured_services %}
+  {% empty %}
+  {% endfor %}
+  {% for service in services %}
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-3">All Services</h2>
+<form method="get" class="mb-3">
+  <div class="row g-2 align-items-center">
+    <div class="col-auto"><label class="col-form-label">Category</label></div>
+    <div class="col-auto">
+      <select name="category" class="form-select" onchange="this.form.submit()">
+        <option value="">All</option>
+        {% for cat in categories %}
+          <option value="{{ cat.id }}" {% if current_category and cat.id == current_category.id %}selected{% endif %}>{{ cat.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+</form>
+
+<div class="row g-3">
+  {% for s in services %}
+  <div class="col-md-4">
+    <div class="card service-card h-100">
+      <div class="card-body">
+        <h5 class="card-title">{{ s.title }}</h5>
+        <p class="card-text small text-muted">{{ s.description|truncatechars:140 }}</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="fw-semibold">₹{{ s.price }}</span>
+          <a href="{% url 'service_detail' s.slug %}" class="btn btn-primary btn-sm">Apply</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <p>No services found.</p>
+  {% endfor %}
+</div>
+{% endblock %}

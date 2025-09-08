@@ -1,0 +1,106 @@
+[
+  {
+    "model": "core.franchise",
+    "pk": 1,
+    "fields": {
+      "name": "Karnataka One CC9",
+      "code": "CC9",
+      "owner_name": "Owner Name",
+      "phone": "9999999999",
+      "address": "Your Address, City",
+      "active": true
+    }
+  },
+  {
+    "model": "core.servicecategory",
+    "pk": 1,
+    "fields": {
+      "name": "Aadhaar",
+      "icon": "\ud83e\udeaa"
+    }
+  },
+  {
+    "model": "core.servicecategory",
+    "pk": 2,
+    "fields": {
+      "name": "PAN",
+      "icon": "\ud83e\uddfe"
+    }
+  },
+  {
+    "model": "core.servicecategory",
+    "pk": 3,
+    "fields": {
+      "name": "Ration Card",
+      "icon": "\ud83c\udf5a"
+    }
+  },
+  {
+    "model": "core.servicecategory",
+    "pk": 4,
+    "fields": {
+      "name": "Certificates",
+      "icon": "\ud83d\udcdc"
+    }
+  },
+  {
+    "model": "core.service",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "title": "Aadhaar Update Assistance",
+      "slug": "aadhaar-update-assistance",
+      "description": "Help with demographic updates and document guidance.",
+      "price": "50.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.service",
+    "pk": 2,
+    "fields": {
+      "category": 2,
+      "title": "Apply for PAN Card",
+      "slug": "apply-for-pan-card",
+      "description": "PAN application assistance and form submission guidance.",
+      "price": "120.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.service",
+    "pk": 3,
+    "fields": {
+      "category": 3,
+      "title": "New Ration Card Application",
+      "slug": "new-ration-card-application",
+      "description": "Assistance for new ration card application and document checklist.",
+      "price": "100.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.service",
+    "pk": 4,
+    "fields": {
+      "category": 4,
+      "title": "Income Certificate",
+      "slug": "income-certificate",
+      "description": "Apply for Income Certificate through proper channel.",
+      "price": "60.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.service",
+    "pk": 5,
+    "fields": {
+      "category": 4,
+      "title": "Caste Certificate",
+      "slug": "caste-certificate",
+      "description": "Guidance and application for Caste Certificate.",
+      "price": "60.00",
+      "is_active": true
+    }
+  }
+]
